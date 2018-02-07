@@ -30,7 +30,7 @@ class ResultsFrame(tk.Frame):
         button1.pack()
 
 
-class VoucherPrinterTk(tk.Tk):
+class VoucherPrinterGUI(tk.Tk):
     def __init__(self, *args, **kwargs):
 
         tk.Tk.__init__(self, *args, **kwargs)
