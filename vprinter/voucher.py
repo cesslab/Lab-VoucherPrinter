@@ -1,4 +1,6 @@
 import csv
+from reportlab.lib.pagesizes import letter
+from reportlab.pdfgen import canvas
 
 
 class Voucher:
@@ -19,3 +21,9 @@ class Voucher:
         except Exception as e:
             self.error = e
             return False
+
+    def generate_calibration_matrix(self):
+        c = canvas.Canvas("form.pdf", pagesize=letter)
+        c.setLineWidth(.3)
+        c.setFont('Helvetica', 12)
+        c.save()
