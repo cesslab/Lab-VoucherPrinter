@@ -21,7 +21,6 @@ class VoucherPrinterGUI(tk.Tk):
         root_frame = tk.Frame(self)
         self.geometry("800x600")
 
-        root_frame.pack(side="top", fill="both", expand=True)
         root_frame.grid_columnconfigure(0, weight=1)
         root_frame.grid_rowconfigure(0, weight=1)
 
