@@ -1,10 +1,14 @@
+import os
 import tkinter as tk
 from tkinter import ttk
 from tkinter import filedialog
 from tkinter import messagebox
+from tkinter import Button
+from PIL import Image, ImageTk
 
 from vprinter import ui
 from vprinter.voucher import Voucher
+from vprinter.configuration import ConfigurationSettings
 
 
 class PrimaryFrame(tk.Frame):
@@ -40,6 +44,13 @@ class VoucherPrinterGUI(tk.Tk):
         menu_bar.add_cascade(label="File", menu=file_menu)
         self.config(menu=menu_bar)
 
+        toolbar = Frame(root_frame, self)
+        open_file_icon_path = os.path.join("images", "file-text-o.png")
+        img = Image.open(open_file_icon_path)
+        tkimg = ImageTk.PhotoImage(img)
+        open_button = Button(toolbar, image=tkimg)
+
+        self.configuration = ConfigurationSettings()
         self.voucher = Voucher()
 
         self.total_rows = 1
