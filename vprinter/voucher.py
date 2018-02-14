@@ -3,6 +3,7 @@ from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 
 
+
 class Voucher:
     def __init__(self):
         self.error = None
