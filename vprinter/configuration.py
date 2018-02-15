@@ -26,8 +26,11 @@ class Configuration:
 class ConfigurationSettings:
     def __init__(self):
         self.data = {}
-        with open('configurations.json') as json_data:
-            self.data = json.load(json_data)
+        try:
+            with open('config/configurations.json') as json_data:
+                self.data = json.load(json_data)
+        except Exception:
+            pass
 
     def add_config(self, configuration):
         self.data[configuration.name] = configuration.to_dictionary()
