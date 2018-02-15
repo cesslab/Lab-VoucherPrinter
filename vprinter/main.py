@@ -1,4 +1,4 @@
-from vprinter.ui import VoucherPrinterGUI
+from vprinter.ui import VoucherPrinterApp
 
-app = VoucherPrinterGUI()
+app = VoucherPrinterApp()
 app.mainloop()
