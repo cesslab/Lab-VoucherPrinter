@@ -1,10 +1,10 @@
 import tkinter as tk
-from tkinter import ttk
 from tkinter import filedialog
 from tkinter import messagebox
+from tkinter import ttk
 
-from vprinter import ui
-from vprinter.voucher import Voucher
+from .voucher import Voucher
+from .ui import PrimaryFrame, ResultsFrame
 
 
 class PrimaryFrame(tk.Frame):
@@ -27,7 +27,7 @@ class VoucherPrinterGUI(tk.Tk):
         self.title("CESS Payment Voucher Printer")
 
         self.frames = {}
-        for Frame in (ui.PrimaryFrame, ui.ResultsFrame):
+        for Frame in (PrimaryFrame, ResultsFrame):
             frame = Frame(root_frame, self)
             frame.grid(row=0, column=0, sticky="snew")
             self.frames[Frame] = frame
@@ -90,3 +90,6 @@ class ResultsFrame(tk.Frame):
         button1.pack()
 
 
+if __name__ == "__main__":
+    app = VoucherPrinterGUI()
+    app.mainloop()
